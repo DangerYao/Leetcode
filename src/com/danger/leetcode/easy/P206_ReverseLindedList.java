@@ -53,12 +53,12 @@ public class P206_ReverseLindedList {
         return newHead;
     }
 	
-}
-
-class ListNode {
-	int val;
-	ListNode next;
-	ListNode(int x) {
-		 val = x; 
+	private static class ListNode {
+		int val;
+		ListNode next;
+		ListNode(int x) {
+			val = x; 
+		}
 	}
 }
+
