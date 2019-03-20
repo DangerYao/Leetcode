@@ -18,7 +18,7 @@ public class P206_ReverseLindedList {
 		ListNode rev = reverseList(head);
 		
 		while(rev != null) {
-//			System.out.print(rev.val + " ");
+			System.out.print(rev.val + " ");
 			rev = rev.next;
 		}
 	}

@@ -1,32 +1,76 @@
 package com.danger.leetcode.easy;
 
 /**
- * Determine whether an integer is a palindrome. Do this without extra space.
+判断一个整数是否是回文数。回文数是指正序（从左向右）和倒序（从右向左）读都是一样的整数。
 
-	click to show spoilers.
-	Some hints:
-	
-	Could negative integers be palindromes? (ie, -1)
-	
-	If you are thinking of converting the integer to string, 
-	note the restriction of using extra space.
-	
-	You could also try reversing an integer. However, 
-	if you have solved the problem "Reverse Integer", 
-	you know that the reversed integer might overflow. 
-	How would you handle such case?
+示例 1:
 
-	There is a more generic way of solving this problem.
+输入: 121
+输出: true
+示例 2:
 
- * @author DangerYao
+输入: -121
+输出: false
+解释: 从左向右读, 为 -121 。 从右向左读, 为 121- 。因此它不是一个回文数。
+示例 3:
+
+输入: 10
+输出: false
+解释: 从右向左读, 为 01 。因此它不是一个回文数。
+进阶:
+
+你能不将整数转为字符串来解决这个问题吗？
+
+ * @author Danger
  *
  */
 public class P9_PalindromeNumber {
 
 	public static void main(String[] args) {
-		int x = 0;
+		int x = 100;
 		System.out.println(isPalindrome(x));
 	}
+	
+	/**
+	 *  将其转换为字符串,并对字符串转换为Char数组，对数组进行处理
+	 * @param x
+	 * @return
+	 */
+	public static boolean isPalindrome(int x) {
+		if (x < 0) {
+			return false;
+		}
+		String xStr = String.valueOf(x);
+		char[] chars = xStr.toCharArray();
+		int l,r; // 左右指针
+		if(chars.length % 2 == 0) {
+			r = chars.length / 2;
+			l = r - 1;
+			while(l>=0 && chars[l] == chars[r]) {
+				l--;
+				r++;
+			}
+			if(l >= 0) {
+				return false;
+			} 
+		} else {
+			l = r = chars.length / 2;
+			while(l>=0 && chars[l] == chars[r]) {
+				l--;
+				r++;
+			}
+			if(l >= 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	/**
+	 *  不采用String处理
+	 * @param x
+	 * @return
+	 */
 	public static boolean isPalindrome2(int x) {
 		int div = 1;
 		if (x < 0) {
@@ -45,7 +89,7 @@ public class P9_PalindromeNumber {
 		return true;
 	}
 	
-	public static boolean isPalindrome(int x) {
+	public static boolean isPalindrome3(int x) {
 		// without extra space and no extra call stack
 		// maybe this is a stupid way, but in line with the questions.
 		// if we can use the space O(1),

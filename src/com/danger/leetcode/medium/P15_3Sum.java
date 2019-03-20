@@ -1,7 +1,6 @@
 package com.danger.leetcode.medium;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 
@@ -27,7 +26,7 @@ public class P15_3Sum {
 		List<List<Integer>> result = threeSum(nums);
 		long end = System.currentTimeMillis();
 		System.out.println("TIME: " + (end - start));
-//		System.out.println(result);
+		System.out.println(result);
 	}
 
 	public static List<List<Integer>> threeSum(int[] nums) {
