@@ -3,8 +3,6 @@ package com.danger.leetcode.easy;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.sun.org.apache.bcel.internal.generic.ReturnaddressType;
-
 /**
  * 求众数
 给定一个大小为 n 的数组，找到其中的众数。众数是指在数组中出现次数大于 ⌊ n/2 ⌋ 的元素。
