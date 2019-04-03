@@ -26,6 +26,7 @@ public class P21_MergeTwoSortedLists {
 		// 5. 不等长链表
 		// 		第一个长
 		//		第二个长
+		// 6. 两个链表数据完全相同
 		
 		ListNode node1 = new ListNode(1);
 		node1.next = new ListNode(2);
