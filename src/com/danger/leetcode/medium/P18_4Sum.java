@@ -36,7 +36,7 @@ public class P18_4Sum {
 	 */
 	public static List<List<Integer>> fourSum(int[] nums, int target) {
         
-		// �߽���
+		// 边界处理
 		if(nums == null & nums.length < 4) {
 			return new ArrayList<>();
 		}
